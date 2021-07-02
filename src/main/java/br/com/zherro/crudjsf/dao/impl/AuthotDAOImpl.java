@@ -44,4 +44,13 @@ public class AuthotDAOImpl extends AbstractJPA implements AuthorDAO {
 		return authors;
 	}
 
+	@Override
+	public List<Author> getByBook(Long idBook) {
+		String jpql = "select a from Author a join fetch a.books l where l.id = :idBook order by a.name";
+		TypedQuery<Author> query = getEntityManager().createQuery(jpql, Author.class);
+		query.setParameter("idBook", idBook);
+		List<Author> autores = query.getResultList();
+		return autores;
+	}
+
 }

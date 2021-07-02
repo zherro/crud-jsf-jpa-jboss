@@ -37,4 +37,8 @@ public class AuthorBoImpl implements AuthorBO {
 		return authorDAO.getAll();
 	}
 
+	public List<Author> getByBook(Long id) {
+		return authorDAO.getByBook(id);
+	}
+
 }

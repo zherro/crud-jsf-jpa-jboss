@@ -12,4 +12,6 @@ public interface AuthorDAO {
 	public Author getById(Long id);
 	
 	public List<Author> getAll();
+
+	public List<Author> getByBook(Long id);
 }

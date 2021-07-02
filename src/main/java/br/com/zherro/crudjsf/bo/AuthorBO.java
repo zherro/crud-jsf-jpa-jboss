@@ -14,4 +14,6 @@ public interface AuthorBO {
 	
 	public List<Author> getAll();
 
+	public List<Author> getByBook(Long id);
+
 }

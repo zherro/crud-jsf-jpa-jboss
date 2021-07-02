@@ -56,6 +56,15 @@ public class Book {
 		this.active = active;
 	}
 
+	
+
+	public List<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
+	}
 
 	@Override
 	public String toString() {
