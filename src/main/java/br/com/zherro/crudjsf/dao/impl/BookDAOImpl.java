@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 import br.com.zherro.crudjsf.dao.BookDAO;
 import br.com.zherro.crudjsf.model.Book;
 
-@Named("livroDAO")
+@Named("bookDAO")
 public class BookDAOImpl extends AbstractJPA implements BookDAO {
 
 	@Override
