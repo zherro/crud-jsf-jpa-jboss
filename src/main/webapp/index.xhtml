@@ -4,54 +4,56 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/default.xhtml">
+	<ui:define name="corpo">
 
+		<h:head>
 
-	<h:head>
-
-		<style type="text/css">
+			<style type="text/css">
 			.mt2 {
 				margin-top: 2em;
 			}
-			.center{ 
+			
+			.center {
 				text-align: center;
 			}
-		</style>
-	</h:head>
+			</style>
+		</h:head>
 
-	<h:body style="margin: 2em 20%">
-		<p:panel style="width:100%; text-align:center">
+		<h:body style="margin: 2em 20%">
+			<p:panel style="width:100%; text-align:center">
 
-			<h1>Hello, this is basic JSF + JBoss setup</h1>
+				<h1>Hello, this is basic JSF + JBoss setup</h1>
 
-		</p:panel>
+			</p:panel>
 
-		<div class="card">
-			<h:form>
-				<p:growl id="messages" />
+			<div class="card">
+				<h:form>
+					<p:growl id="messages" />
 
-				<p:menubar>
-					<p:menuitem value="Home" icon="pi pi-fw pi-home" />
+					<p:menubar>
+						<p:menuitem value="Home" icon="pi pi-fw pi-home" />
 
-					<p:submenu label="File" icon="pi pi-fw pi-file">
-						<p:submenu label="New" icon="pi pi-fw pi-plus">
-							<p:menuitem value="Bookmark" icon="pi pi-fw pi-bookmark" />
-							<p:menuitem value="Video" icon="pi pi-fw pi-video" />
+						<p:submenu label="File" icon="pi pi-fw pi-file">
+							<p:submenu label="New" icon="pi pi-fw pi-plus">
+								<p:menuitem value="Bookmark" icon="pi pi-fw pi-bookmark" />
+								<p:menuitem value="Video" icon="pi pi-fw pi-video" />
+							</p:submenu>
+							<p:menuitem value="Delete" icon="pi pi-fw pi-trash" />
+							<p:divider />
+							<p:menuitem value="Export" icon="pi pi-fw pi-external-link" />
 						</p:submenu>
-						<p:menuitem value="Delete" icon="pi pi-fw pi-trash" />
-						<p:divider />
-						<p:menuitem value="Export" icon="pi pi-fw pi-external-link" />
-					</p:submenu>
-				</p:menubar>
-			</h:form>
-		</div>
-		<p:panel  styleClass="mt2">
-		</p:panel>
-		<p:panel styleClass="mt2 center">
-			<p >
-				<b>&copy; 2021</b> . zherro
-			</p>
-		</p:panel>
-	</h:body>
-
+					</p:menubar>
+				</h:form>
+			</div>
+			<p:panel styleClass="mt2">
+			</p:panel>
+			<p:panel styleClass="mt2 center">
+				<p>
+					<b>&copy; 2021</b> . zherro
+				</p>
+			</p:panel>
+		</h:body>
+	</ui:define>
 </ui:composition>
