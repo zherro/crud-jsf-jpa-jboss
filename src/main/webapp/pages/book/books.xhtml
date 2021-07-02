@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template/default.xhtml">
+	<ui:define name="corpo">
+	
+		<h:form id="book">
+           	<h:panelGrid id="infoLivro" columns="5">
+           		<p:outputLabel value="Book Name: " />
+            	<p:inputText id="bookName" value="#{bookBean.book.title}" style="width: 300px"/>
+            	
+            	<p:focus context="infoLivro"/>
+            </h:panelGrid>
+			
+			<h:panelGrid>
+				
+				<p:commandButton id="salvarLivro" value="Salvar" action="#{bookBean.save()}"  update=":book :listBook"   style="float:left"/>
+			</h:panelGrid>
+		</h:form>
+	    <br/>
+       	<h:form id="listBook">
+       		<p:dataTable id="listBook" var="book" value="#{bookBean.books}" paginator="true" rows="10" rowsPerPageTemplate="5,10,15" emptyMessage="Not found books!" 
+       				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">  
+		        <f:facet name="header">  
+		            <h:outputText value="My books" />  
+		        </f:facet>  
+		  
+		        <p:column>  
+		            <f:facet name="header">  
+		                <h:outputText value="Name" />  
+		            </f:facet>  
+		            <h:outputText value="#{book.title}" />  
+		        </p:column>  
+	
+		        <p:column>  
+		            <f:facet name="header">  
+		                <h:outputText value="" />  
+		            </f:facet>  
+		             <p:commandButton id="ediBook" value="Edit" action="#{bookBean.edit(book)}" update=":book" />  
+		        </p:column> 
+		         
+		        <p:column>  
+		            <f:facet name="header">  
+		                <h:outputText value="" />  
+		            </f:facet>
+		            <p:commandButton id="deleteBook" value="Delete" action="#{bookBean.delete(book)}" update=":book :listBook" />  
+		        </p:column>  
+		    </p:dataTable> 
+       	</h:form>
+			
+	</ui:define>
+</ui:composition>
