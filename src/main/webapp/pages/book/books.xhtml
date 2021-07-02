@@ -17,8 +17,20 @@
             </h:panelGrid>
 			
 			<h:panelGrid>
+				<p:pickList id="autores" value="#{bookBean.authors}" var="author" effect="bounce" itemValue="#{author}" itemLabel="#{author.name}" converter="author"
+						showSourceControls="true" showTargetControls="true" showCheckbox="true" showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains">
+	
+						<f:facet name="sourceCaption">Avaliable Authors</f:facet>
+						<f:facet name="targetCaption">Selected Authors</f:facet>
+	
+						<p:ajax event="transfer" listener="#{bookBean.selectedAuthors}" />
+	
+						<p:column style="width:100%;">
+							<h:outputText value="#{author.name}" />
+			        	</p:column>
+				</p:pickList>
 				
-				<p:commandButton id="salvarLivro" value="Salvar" action="#{bookBean.save()}"  update=":book :listBook"   style="float:left"/>
+				<p:commandButton id="saveBook" value="Save" action="#{bookBean.save()}"  update=":book :listBook"   style="float:left"/>
 			</h:panelGrid>
 		</h:form>
 	    <br/>
