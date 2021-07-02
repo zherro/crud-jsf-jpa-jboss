@@ -1,11 +1,16 @@
 package br.com.zherro.crudjsf.model;
 
+import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.ManyToMany;
 
 @Entity
 @Table(name = "tb_author")
@@ -23,6 +28,9 @@ public class Author {
 	
 	@Column(name = "email")
 	private String email;
+	
+	@ManyToMany(mappedBy ="authors", fetch=FetchType.LAZY, cascade=CascadeType.REMOVE)
+	private Collection<Book> books;
 
 	public Long getId() {
 		return id;
