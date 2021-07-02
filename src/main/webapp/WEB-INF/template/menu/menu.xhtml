@@ -13,14 +13,9 @@
 				<p:menubar>
 					<p:menuitem value="Home" icon="pi pi-fw pi-home" />
 
-					<p:submenu label="File" icon="pi pi-fw pi-file">
-						<p:submenu label="New" icon="pi pi-fw pi-plus">
-							<p:menuitem value="Bookmark" icon="pi pi-fw pi-bookmark" />
-							<p:menuitem value="Video" icon="pi pi-fw pi-video" />
-						</p:submenu>
-						<p:menuitem value="Delete" icon="pi pi-fw pi-trash" />
-						<p:divider />
-						<p:menuitem value="Export" icon="pi pi-fw pi-external-link" />
+					<p:submenu label="Cadastro" icon="pi pi-fw pi-file">
+						<p:menuitem value="Author" icon="pi pi-fw pi-user" url="${request.contextPath}/pages/author/authors.xhtml" />
+						<p:menuitem value="Book" icon="pi pi-fw pi-book"  url="${request.contextPath}/pages/book/books.xhtml" />
 					</p:submenu>
 				</p:menubar>
 			</h:form>
